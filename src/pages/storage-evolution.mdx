@@ -12,22 +12,24 @@ import StorageDeviceCard from '../components/StorageDeviceCard.astro';
 # Bytes of the Past: The Evolution of Storage Devices
 
 <section class="exhibit-hero">
-  <p class="exhibit-eyebrow">CSARCH2 Virtual Exhibit</p>
-  <h1>Bytes of the Past</h1>
-  <p class="exhibit-hero__subtitle">
-    A virtual exhibit about how computers learned to remember: from punched holes and magnetic surfaces to solid-state chips and cloud data centers.
+  <p class="eyebrow">CSARCH2 Virtual Exhibit</p>
+  <h2>Bytes of the Past</h2>
+  <p>
+    A virtual exhibit about how computers learned to remember: 
+    from punched holes and magnetic surfaces to solid-state chips 
+    and cloud data centers.
   </p>
-  <div class="exhibit-hero__stats" aria-label="Exhibit highlights">
-    <div>
+  <div class="hero-stats">
+    <div class="hero-stat-block">
       <strong>9</strong>
       <span>storage milestones</span>
     </div>
-    <div>
-      <strong>1800s→Today</strong>
+    <div class="hero-stat-block">
+      <strong>1800s → Today</strong>
       <span>historical timeline</span>
     </div>
-    <div>
-      <strong>4 metrics</strong>
+    <div class="hero-stat-block">
+      <strong>4 Metrics</strong>
       <span>speed, capacity, portability, durability</span>
     </div>
   </div>
@@ -35,75 +37,102 @@ import StorageDeviceCard from '../components/StorageDeviceCard.astro';
 
 ## Introduction: Why Storage Matters
 
-<section class="exhibit-section exhibit-section--split">
+<section class="split">
   <div>
-    Storage is one of the most important parts of computer architecture because it allows computers to keep programs, files, instructions, and data even when power is turned off. Without storage, a computer would not be able to preserve work, load operating systems, install applications, or retrieve information later.
+    Storage is one of the most important parts of computer 
+    architecture because it allows computers to keep programs, 
+    files, instructions, and data even when power is turned off. 
+    Without storage, a computer would not be able to preserve 
+    work, load operating systems, install applications, or retrieve 
+    information later.
 
-    This exhibit follows the historical development of storage devices. The story begins with physical punched media, moves through magnetic and optical storage, and ends with solid-state drives and cloud storage. Across each generation, the same goal appears again and again: store more data, access it faster, make it easier to carry, and make it more reliable.
+    This exhibit follows the historical development of storage 
+    devices. The story begins with physical punched media, moves 
+    through magnetic and optical storage, and ends with solid-state 
+    drives and cloud storage. Across each generation, the same goal 
+    appears again and again: store more data, access it faster, 
+    make it easier to carry, and make it more reliable.
   </div>
 
   <aside class="then-now-panel">
-    <h3>Then vs. Now</h3>
-    <div class="then-now-panel__row">
-      <div class="then-now-panel__item">
-        <strong>Then</strong>
-        <p>Data was physical, bulky, and often handled by people directly.</p>
-      </div>
-      <div class="then-now-panel__arrow">→</div>
-      <div class="then-now-panel__item">
-        <strong>Now</strong>
-        <p>Data can be stored electronically, accessed instantly, and synced across devices.</p>
-      </div>
+  <h3>Then vs. Now</h3>
+  <div class="then-now-stack">
+    <div>
+      <strong>Then</strong>
+      <p>
+        Data was physical, bulky, and often handled by people 
+        directly.
+      </p>
     </div>
-  </aside>
+    <span>↓</span>
+    <div>
+      <strong>Now</strong>
+      <p>
+        Data can be stored electronically, accessed instantly, and 
+        synced across devices.
+      </p>
+    </div>
+  </div>
+</aside>
 </section>
 
 <StorageTimeline client:load />
 
 ## Storage Device Deep Dive
 
-<section class="exhibit-section device-grid">
+<section class="device-grid">
   <StorageDeviceCard icon="▦" title="Punch Cards & Paper Tape" era="1800s–1970s">
-    Early computers and tabulating machines used punched holes to represent data and instructions. They were simple, but bulky and slow.
+    Early computers and tabulating machines used punched holes to 
+    represent data and instructions. They were simple, but bulky 
+    and slow.
   </StorageDeviceCard>
 
   <StorageDeviceCard icon="◉" title="Magnetic Tape" era="1950s–present">
-    Magnetic tape stored more data in less space and became useful for backup and archival storage, although it relies on sequential access.
+    Magnetic tape stored more data in less space and became useful 
+    for backup and archival storage, although it relies on 
+    sequential access.
   </StorageDeviceCard>
 
   <StorageDeviceCard icon="◌" title="Hard Disk Drives" era="1956–present">
-    HDDs introduced random access using spinning magnetic platters, making large-capacity everyday computer storage practical.
+    HDDs introduced random access using spinning magnetic platters, 
+    making large-capacity everyday computer storage practical.
   </StorageDeviceCard>
 
   <StorageDeviceCard icon="▣" title="Floppy Disks" era="1970s–2000s">
-    Floppy disks made files and software portable for personal computers, but their capacity was very limited.
+    Floppy disks made files and software portable for personal 
+    computers, but their capacity was very limited.
   </StorageDeviceCard>
 
   <StorageDeviceCard icon="◎" title="Optical Discs" era="1980s–present">
-    CDs, DVDs, and Blu-ray discs used lasers to read data and became common for software, music, movies, and games.
+    CDs, DVDs, and Blu-ray discs used lasers to read data and 
+    became common for software, music, movies, and games.
   </StorageDeviceCard>
 
   <StorageDeviceCard icon="▤" title="Flash Memory & Memory Cards" era="1990s–present">
-    Flash storage removed moving parts and made compact, reusable storage practical for cameras, phones, and embedded devices.
+    Flash storage removed moving parts and made compact, reusable 
+    storage practical for cameras, phones, and embedded devices.
   </StorageDeviceCard>
 
   <StorageDeviceCard icon="▰" title="USB Flash Drives" era="2000s–present">
-    USB drives packaged flash memory into a small plug-and-play device, replacing floppies for quick file transfer.
+    USB drives packaged flash memory into a small plug-and-play 
+    device, replacing floppies for quick file transfer.
   </StorageDeviceCard>
 
   <StorageDeviceCard icon="▧" title="Solid-State Drives" era="2000s–present">
-    SSDs use flash memory and controllers to deliver fast, silent, durable storage for modern computers.
+    SSDs use flash memory and controllers to deliver fast, silent, 
+    durable storage for modern computers.
   </StorageDeviceCard>
 
   <StorageDeviceCard icon="☁" title="Cloud Storage" era="2000s–present">
-    Cloud storage stores files on remote servers, making data accessible across devices through online services.
+    Cloud storage stores files on remote servers, making data 
+    accessible across devices through online services.
   </StorageDeviceCard>
 </section>
 
 ## Comparison Table
 
-<section class="exhibit-section comparison-table-wrapper">
-  <table class="storage-comparison-table">
+<section class="table-wrapper">
+  <table>
     <thead>
       <tr>
         <th>Device</th>
@@ -173,8 +202,15 @@ import StorageDeviceCard from '../components/StorageDeviceCard.astro';
 
 ## Conclusion
 
-<section class="exhibit-section exhibit-conclusion">
-  The evolution of storage devices shows a constant architectural push toward better memory systems: higher capacity, faster access, smaller physical size, easier portability, and stronger reliability. From punched cards to cloud storage, each generation solved problems from the previous one while introducing new trade-offs. Modern storage may feel invisible, but it still builds on the same core idea: computers need a dependable way to remember.
+<section class="exhibit-conclusion">
+  The evolution of storage devices shows a constant architectural 
+  push toward better memory systems: higher capacity, faster access, 
+  smaller physical size, easier portability, and stronger 
+  reliability. From punched cards to cloud storage, each generation 
+  solved problems from the previous one while introducing new 
+  trade-offs. Modern storage may feel invisible, but it still 
+  builds on the same core idea: computers need a dependable way to 
+  remember.
 </section>
 
 ## References

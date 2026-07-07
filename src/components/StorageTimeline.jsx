@@ -161,85 +161,107 @@ export default function StorageTimeline() {
   return (
     <section className="storage-timeline" aria-label="Interactive storage timeline">
       <div className="storage-timeline__intro">
-        <p className="storage-eyebrow">Interactive Timeline</p>
-        <h2>Storage Through Time</h2>
+        <div className="storage-timeline__header-row">
+          <div>
+            <p className="storage-eyebrow">Interactive Timeline</p>
+            <h2>Storage Through Time</h2>
+          </div>
+          <div className="storage-timeline__controls">
+            <button
+              type="button"
+              onClick={goPrevious}
+              disabled={selectedIndex === 0}
+              aria-label="Previous milestone"
+            >
+              ← Prev
+            </button>
+            <span className="storage-timeline__step">
+              {selectedIndex + 1} of {devices.length}
+            </span>
+            <button
+              type="button"
+              onClick={goNext}
+              disabled={selectedIndex === devices.length - 1}
+              aria-label="Next milestone"
+            >
+              Next →
+            </button>
+          </div>
+        </div>
         <p>
           Click a milestone to see how each generation stored data, what it improved,
           and what trade-offs it still had.
         </p>
       </div>
 
-      <div className="storage-timeline__track" style={{ "--progress": `${progress}%` }}>
-        {devices.map((device, index) => (
-          <button
-            type="button"
-            key={device.id}
-            className={`storage-node ${index === selectedIndex ? "is-active" : ""}`}
-            onClick={() => setSelectedIndex(index)}
-            aria-pressed={index === selectedIndex}
-          >
-            <span className="storage-node__icon">{device.icon}</span>
-            <span className="storage-node__year">{device.era.split("–")[0]}</span>
-            <span className="storage-node__name">{device.name}</span>
-          </button>
-        ))}
+      <div className="storage-timeline__track">
+        <div className="storage-timeline__track-inner" style={{ "--progress": `${progress}%` }}>
+          {devices.map((device, index) => (
+            <button
+              type="button"
+              key={device.id}
+              className={`storage-node ${index === selectedIndex ? "is-active" : ""}`}
+              onClick={() => setSelectedIndex(index)}
+              aria-pressed={index === selectedIndex}
+            >
+              <span className="storage-node__icon">{device.icon}</span>
+              <span className="storage-node__year">{device.era.split("–")[0]}</span>
+              <span className="storage-node__name">{device.name}</span>
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="storage-detail-card">
-        <div className="storage-detail-card__symbol" aria-hidden="true">
-          {selectedDevice.icon}
-        </div>
-
         <div className="storage-detail-card__content">
           <div className="storage-detail-card__header">
-            <p className="storage-eyebrow">{selectedDevice.era}</p>
-            <h3>{selectedDevice.name}</h3>
+            <div className="storage-detail-card__icon" aria-hidden="true">
+              {selectedDevice.icon}
+            </div>
+            <div className="storage-detail-card__title-area">
+              <p className="storage-eyebrow">{selectedDevice.era}</p>
+              <h3>{selectedDevice.name}</h3>
+            </div>
           </div>
 
-          <div className="storage-detail-grid">
-            <article>
-              <h4>How it stores data</h4>
-              <p>{selectedDevice.storageMethod}</p>
-            </article>
-            <article>
-              <h4>Common uses</h4>
-              <p>{selectedDevice.uses}</p>
-            </article>
-            <article>
-              <h4>Strengths</h4>
-              <p>{selectedDevice.strengths}</p>
-            </article>
-            <article>
-              <h4>Limitations</h4>
-              <p>{selectedDevice.limitations}</p>
-            </article>
-          </div>
+          <div className="storage-detail-card__body-layout">
+            <div className="storage-detail-card__details-col">
+              <div className="storage-detail-grid">
+                <article>
+                  <h4>How it stores data</h4>
+                  <p>{selectedDevice.storageMethod}</p>
+                </article>
+                <article>
+                  <h4>Common uses</h4>
+                  <p>{selectedDevice.uses}</p>
+                </article>
+                <article>
+                  <h4>Strengths</h4>
+                  <p>{selectedDevice.strengths}</p>
+                </article>
+                <article>
+                  <h4>Limitations</h4>
+                  <p>{selectedDevice.limitations}</p>
+                </article>
+              </div>
+            </div>
 
-          <div className="storage-callout">
-            <strong>Did you know?</strong>
-            <span>{selectedDevice.funFact}</span>
-          </div>
+            <div className="storage-detail-card__meta-col">
+              <div className="storage-ratings" aria-label={`Ratings for ${selectedDevice.name}`}>
+                {Object.entries(selectedDevice.ratings).map(([metric, value]) => (
+                  <RatingBar key={metric} label={metricLabels[metric]} value={value} />
+                ))}
+              </div>
 
-          <div className="storage-comparison-note">
-            <strong>Compared to the previous generation:</strong> {selectedDevice.comparison}
-          </div>
+              <div className="storage-callout">
+                <strong>Did you know?</strong>
+                <span>{selectedDevice.funFact}</span>
+              </div>
 
-          <div className="storage-ratings" aria-label={`Ratings for ${selectedDevice.name}`}>
-            {Object.entries(selectedDevice.ratings).map(([metric, value]) => (
-              <RatingBar key={metric} label={metricLabels[metric]} value={value} />
-            ))}
-          </div>
-
-          <div className="storage-timeline__controls">
-            <button type="button" onClick={goPrevious} disabled={selectedIndex === 0}>
-              Previous
-            </button>
-            <span>
-              {selectedIndex + 1} of {devices.length}
-            </span>
-            <button type="button" onClick={goNext} disabled={selectedIndex === devices.length - 1}>
-              Next
-            </button>
+              <div className="storage-comparison-note">
+                <strong>Compared to the previous generation:</strong> {selectedDevice.comparison}
+              </div>
+            </div>
           </div>
         </div>
       </div>
