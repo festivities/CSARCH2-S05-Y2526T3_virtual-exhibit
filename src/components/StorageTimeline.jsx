@@ -1,4 +1,12 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import punchcardModel from "../assets/models/punchcard.glb?url";
+import hddModel from "../assets/models/hdd.glb?url";
+import floppyDiskModel from "../assets/models/floppy_disk.glb?url";
+import opticalDiscModel from "../assets/models/cd_disc.glb?url";
+import flashMemoryModel from "../assets/models/memorycard_and_memorycardadapter.glb?url";
+import usbModel from "../assets/models/usb.glb?url";
+import ssdModel from "../assets/models/ssd.glb?url";
+import magneticTapeImage from "../assets/MagTape.jpg?url";
 
 const devices = [
   {
@@ -13,6 +21,8 @@ const devices = [
     funFact: "A single misplaced or bent card could break the order of an entire program deck.",
     comparison: "This was the starting point: storage was physical, visible, and handled by people.",
     ratings: { speed: 1, capacity: 1, portability: 2, durability: 2 },
+    model: punchcardModel,
+    credits: '"Punchcard" (https://skfb.ly/orXyz) by jaggelidakis is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).',
   },
   {
     id: "magnetic-tape",
@@ -26,6 +36,8 @@ const devices = [
     funFact: "Tape is still used today for enterprise backups because it is cheap at very large capacities.",
     comparison: "Compared with punched media, tape stored far more data in less physical space.",
     ratings: { speed: 2, capacity: 3, portability: 2, durability: 3 },
+    image: magneticTapeImage,
+    credits: "7-inch reel of ¼-inch-wide audio recording tape, typical of consumer use in the 1950s–70s from Wikipedia",
   },
   {
     id: "hard-disk-drive",
@@ -39,6 +51,8 @@ const devices = [
     funFact: "Early hard drives were room-sized; modern drives can fit terabytes into a small desktop bay.",
     comparison: "Unlike tape, hard disks made it practical to jump directly to data instead of scanning from the start.",
     ratings: { speed: 3, capacity: 4, portability: 2, durability: 2 },
+    model: hddModel,
+    credits: '"Hard Drive-SF" (https://skfb.ly/6RCxq) by Giannis Galatsis is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).',
   },
   {
     id: "floppy-disk",
@@ -52,6 +66,8 @@ const devices = [
     funFact: "The save icon used in many apps still resembles a 3.5-inch floppy disk.",
     comparison: "Floppies brought storage from machine rooms to bags, desks, and classrooms.",
     ratings: { speed: 2, capacity: 1, portability: 4, durability: 2 },
+    model: floppyDiskModel,
+    credits: '"Floppy Disk" (https://skfb.ly/oqpCQ) by p1xfx is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).',
   },
   {
     id: "optical-disc",
@@ -65,6 +81,8 @@ const devices = [
     funFact: "CDs, DVDs, and Blu-ray discs use similar optical principles but different densities.",
     comparison: "Compared with floppies, optical discs offered far more capacity for media and software.",
     ratings: { speed: 2, capacity: 3, portability: 4, durability: 3 },
+    model: opticalDiscModel,
+    credits: '"Very Simple CD- Disc" (https://skfb.ly/6zvYJ) by Blender3D is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).',
   },
   {
     id: "flash-memory",
@@ -78,6 +96,8 @@ const devices = [
     funFact: "Memory cards made digital cameras practical by replacing film with reusable storage.",
     comparison: "Flash memory removed the need for spinning parts, making storage smaller and tougher.",
     ratings: { speed: 4, capacity: 3, portability: 5, durability: 4 },
+    model: flashMemoryModel,
+    credits: '"Memory card and memory card adapter" (https://skfb.ly/p6K9E) by ChristinaJane is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).',
   },
   {
     id: "usb-flash-drive",
@@ -91,6 +111,8 @@ const devices = [
     funFact: "USB drives quickly replaced floppy disks because they were smaller and held much more data.",
     comparison: "USB flash drives made removable storage faster, smaller, and more convenient than discs or floppies.",
     ratings: { speed: 4, capacity: 4, portability: 5, durability: 4 },
+    model: usbModel,
+    credits: '"USB Flash Drive" (https://skfb.ly/oJxtS) by arloopa is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).',
   },
   {
     id: "solid-state-drive",
@@ -104,6 +126,8 @@ const devices = [
     funFact: "Upgrading from an HDD to an SSD is one of the most noticeable speed boosts for an old computer.",
     comparison: "SSDs kept the capacity benefits of modern storage while removing the biggest mechanical bottleneck.",
     ratings: { speed: 5, capacity: 4, portability: 4, durability: 5 },
+    model: ssdModel,
+    credits: '"SSD Samsung 980 PRO 1TB" (https://skfb.ly/oBNrM) by cityon360 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).',
   },
   {
     id: "cloud-storage",
@@ -138,6 +162,88 @@ function RatingBar({ label, value }) {
         <span style={{ width: `${value * 20}%` }} />
       </div>
     </div>
+  );
+}
+
+function StorageModelPreview({ src, alt, image }) {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const previewImage = typeof image === "string" ? image : image?.src;
+
+  useEffect(() => {
+    const scriptId = "model-viewer-script";
+    const existingScript = document.getElementById(scriptId);
+
+    if (existingScript) {
+      if (window.customElements?.get("model-viewer")) {
+        setIsLoaded(true);
+      }
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.id = scriptId;
+    script.type = "module";
+    script.src = "https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js";
+    script.onload = () => setIsLoaded(true);
+    document.body.appendChild(script);
+  }, []);
+
+  return (
+    <>
+      <div className={`storage-model-preview ${isFullscreen ? "is-fullscreen" : ""}`} aria-label={alt}>
+        {src ? (
+          <>
+            <button
+              type="button"
+              className="storage-model-preview__fullscreen"
+              onClick={() => setIsFullscreen((value) => !value)}
+            >
+              {isFullscreen ? "Exit full screen" : "Full screen"}
+            </button>
+
+            {isLoaded ? (
+              <model-viewer
+                src={src}
+                alt={alt}
+                auto-rotate
+                camera-controls
+                ar
+                loading="lazy"
+                className="storage-model-preview__viewer"
+              />
+            ) : (
+              <div className="storage-model-preview__loading">Loading 3D preview…</div>
+            )}
+          </>
+        ) : previewImage ? (
+          <img src={previewImage} alt={alt} className="storage-model-preview__image" loading="lazy" decoding="async" />
+        ) : null}
+      </div>
+
+      {isFullscreen && src && (
+        <div className="storage-model-preview__overlay" onClick={() => setIsFullscreen(false)}>
+          <div className="storage-model-preview__overlay-card" onClick={(event) => event.stopPropagation()}>
+            <button
+              type="button"
+              className="storage-model-preview__fullscreen storage-model-preview__fullscreen--overlay"
+              onClick={() => setIsFullscreen(false)}
+            >
+              Close
+            </button>
+            <model-viewer
+              src={src}
+              alt={alt}
+              auto-rotate
+              camera-controls
+              ar
+              loading="lazy"
+              className="storage-model-preview__viewer storage-model-preview__viewer--overlay"
+            />
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
@@ -244,6 +350,14 @@ export default function StorageTimeline() {
                   <p>{selectedDevice.limitations}</p>
                 </article>
               </div>
+
+              {(selectedDevice.model || selectedDevice.image) && (
+                <div className="storage-model-panel">
+                  <h4>{selectedDevice.image ? "Image preview" : "3D preview"}</h4>
+                  <StorageModelPreview src={selectedDevice.model} alt={`${selectedDevice.name} preview`} image={selectedDevice.image} />
+                  {selectedDevice.credits && <p className="storage-model-panel__credits">{selectedDevice.credits}</p>}
+                </div>
+              )}
             </div>
 
             <div className="storage-detail-card__meta-col">
