@@ -424,9 +424,10 @@ p {
 
 .storage-model-preview {
   position: relative;
-  display: grid;
-  place-items: center;
-  min-height: 260px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
   border-radius: 8px;
   overflow: hidden;
   background: linear-gradient(135deg, rgba(54, 216, 255, 0.16), rgba(157, 248, 113, 0.1));
@@ -448,9 +449,12 @@ p {
   font-weight: 700;
 }
 
+.storage-model-preview model-viewer,
 .storage-model-preview__viewer {
+  display: block;
   width: 100%;
-  height: 260px;
+  height: 100%;
+  min-height: 380px;
   background: transparent;
 }
 
