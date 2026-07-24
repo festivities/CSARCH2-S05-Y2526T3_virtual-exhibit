@@ -40,7 +40,12 @@ p {
 }
 
 .article {
-  background: linear-gradient(145deg, #07101e 0%, #0f1b2c 45%, #111827 100%) !important;
+  background: linear-gradient(
+    145deg,
+    #07101e 0%,
+    #0f1b2c 45%,
+    #111827 100%
+  ) !important;
   color: var(--storage-text);
   border-color: rgba(54, 216, 255, 0.35) !important;
   box-shadow: 5px 5px var(--text);
@@ -77,11 +82,15 @@ p {
   position: relative;
   overflow: hidden;
   margin-bottom: 2rem;
-  padding: 1.5rem; 
+  padding: 1.5rem;
   border: 1px solid var(--storage-border);
   border-radius: 8px;
   background:
-    radial-gradient(circle at top right, rgba(54, 216, 255, 0.24), transparent 35%),
+    radial-gradient(
+      circle at top right,
+      rgba(54, 216, 255, 0.24),
+      transparent 35%
+    ),
     linear-gradient(135deg, rgba(17, 30, 51, 0.96), rgba(5, 13, 28, 0.96));
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
 }
@@ -94,7 +103,11 @@ p {
   height: 430px;
   border-radius: 999px;
   border: 1px dashed rgba(54, 216, 255, 0.25);
-  background: repeating-linear-gradient(90deg, transparent 0 18px, rgba(54, 216, 255, 0.08) 18px 20px);
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0 18px,
+    rgba(54, 216, 255, 0.08) 18px 20px
+  );
   transform: rotate(-18deg);
 }
 
@@ -251,7 +264,11 @@ p {
 
 .storage-timeline__track-inner::after {
   width: var(--progress);
-  background: linear-gradient(90deg, var(--storage-warm), var(--storage-accent));
+  background: linear-gradient(
+    90deg,
+    var(--storage-warm),
+    var(--storage-accent)
+  );
 }
 
 .storage-node {
@@ -265,7 +282,10 @@ p {
   background: #101a2b;
   cursor: pointer;
   text-align: left;
-  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    background 0.15s ease;
 }
 
 .storage-node:hover,
@@ -334,7 +354,11 @@ p {
   padding: 1.5rem;
   border-radius: 8px;
   background:
-    radial-gradient(circle at top left, rgba(54, 216, 255, 0.12), transparent 34%),
+    radial-gradient(
+      circle at top left,
+      rgba(54, 216, 255, 0.12),
+      transparent 34%
+    ),
     rgba(255, 255, 255, 0.055);
 }
 
@@ -431,7 +455,11 @@ p {
   min-height: 380px;
   border-radius: 8px;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(54, 216, 255, 0.16), rgba(157, 248, 113, 0.1));
+  background: linear-gradient(
+    135deg,
+    rgba(54, 216, 255, 0.16),
+    rgba(157, 248, 113, 0.1)
+  );
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -441,7 +469,7 @@ p {
   right: 0.75rem;
   z-index: 2;
   border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 999px;
+  border-radius: 100vh;
   padding: 0.45rem 0.8rem;
   color: var(--storage-text);
   background: rgba(8, 17, 31, 0.7);
@@ -571,7 +599,12 @@ p {
   display: block;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--storage-warm), var(--storage-accent-2), var(--storage-accent));
+  background: linear-gradient(
+    90deg,
+    var(--storage-warm),
+    var(--storage-accent-2),
+    var(--storage-accent)
+  );
 }
 
 .storage-timeline__header-row {
@@ -602,7 +635,9 @@ p {
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 700;
-  transition: background 0.15s ease, border-color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .storage-timeline__controls button:hover:not(:disabled) {
@@ -714,7 +749,11 @@ p {
   padding: 1rem;
   border: 1px solid var(--storage-border);
   border-radius: 8px;
-  background: linear-gradient(135deg, rgba(54, 216, 255, 0.12), rgba(157, 248, 113, 0.08));
+  background: linear-gradient(
+    135deg,
+    rgba(54, 216, 255, 0.12),
+    rgba(157, 248, 113, 0.08)
+  );
 }
 
 .exhibit-conclusion p {
@@ -775,7 +814,11 @@ p {
 
   .storage-timeline__track-inner::after {
     height: var(--progress);
-    background: linear-gradient(180deg, var(--storage-warm), var(--storage-accent));
+    background: linear-gradient(
+      180deg,
+      var(--storage-warm),
+      var(--storage-accent)
+    );
   }
 
   .storage-node {
@@ -800,7 +843,10 @@ p {
     margin-bottom: 0;
     position: relative;
     z-index: 2;
-    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .storage-node.is-active .storage-node__icon {
