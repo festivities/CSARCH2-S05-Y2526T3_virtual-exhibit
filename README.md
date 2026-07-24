@@ -1,3 +1,45 @@
+# Development Documentation
+
+## Final Website Update
+
+For the final version of our CSARCH2 virtual exhibit, we developed the website based on our original proposal, **"Bytes of the Past: The Evolution of Storage Devices."** The main goal was to turn our concept into a working Astro-based exhibit page that explains how storage technology evolved from physical punched media to modern cloud storage.
+
+## Development Progress
+
+We created the main exhibit page in `src/pages/storage-evolution.mdx`. This page contains the introduction, interactive storage timeline, storage device deep-dive cards, comparison table, conclusion, and references. We also created reusable components to organize the exhibit content more clearly.
+
+The interactive timeline was implemented in `src/components/StorageTimeline.jsx`. It allows users to click through storage milestones and view details such as storage method, common uses, strengths, limitations, fun facts, and comparison ratings. The ratings compare each storage device based on speed, capacity, portability, and durability.
+
+We also created `src/components/StorageDeviceCard.astro` for the storage device deep-dive section. This helped keep the page organized and made the device cards easier to reuse and style.
+
+On this branch, we extended the timeline with interactive 3D models for each storage device, rendered with `<model-viewer>` so visitors can rotate and inspect each device instead of only seeing an icon.
+
+## Aha Moments
+
+One important realization was that storage devices are not only about capacity. Each generation improved different parts of computer architecture, such as access speed, portability, durability, reliability, and cost. For example, magnetic tape had good capacity for backups but was limited by sequential access. Hard disk drives improved random access, while SSDs removed moving parts and improved speed and durability.
+
+Another moment was that cloud storage is not purely "invisible" storage. Even if users access it online, it still depends on physical storage devices inside data centers. This helped us connect modern storage back to the same architectural ideas found in older devices.
+
+## Things Learned
+
+Through this project, we learned how to organize technical information into a virtual exhibit format. We also learned how to combine Astro, MDX, React JSX, and CSS in one project. Astro and MDX were useful for writing the main exhibit content, while React was useful for the interactive timeline.
+
+We also learned the importance of responsive design. Since the exhibit should work on different screen sizes, the layout needed to adjust for desktop, tablet, and mobile views. This included making the timeline easier to use and making the content readable on smaller screens.
+
+## Challenges Encountered
+
+One challenge was balancing technical accuracy with readability. Since the website is a virtual exhibit, the information had to be understandable to visitors while still being technically correct. We avoided making the explanations too long, but we still included important details such as storage method, strengths, limitations, and historical use.
+
+Another challenge was layout spacing. The original template included a sidebar table of contents and a right-side padder element, which affected how the main content was centered. We adjusted the styling through CSS while keeping the required layout files unchanged.
+
+We also had to make sure the project could still run correctly using Node.js and npm. After installing dependencies, we tested the website locally and checked that the build command worked.
+
+## Creative Development
+
+The visual direction of the website follows a retro museum and futuristic technology theme. The dark background, cyan accents, green labels, and card-based layout were used to make the exhibit feel like a digital museum display. The timeline format was chosen because it clearly shows the historical development of storage devices from older physical media to modern network-based storage.
+
+The exhibit also includes "Then vs. Now," fun facts, comparison ratings, and a summary table to make the information easier to explore instead of presenting everything as plain text.
+
 **Bytes of the Past: The Evolution of Storage Devices**  
 CSARCH2 Virtual Exhibit Case Proposal  
 **Abdulrahman, Bilanes, Nicolas, Serra, Valle**  
