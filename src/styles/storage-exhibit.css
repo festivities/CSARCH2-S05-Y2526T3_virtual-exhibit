@@ -707,11 +707,8 @@ p {
   line-height: 1.25;
 }
 
-.device-card__body :global(p),
 .device-card__body p {
   margin: 0;
-  font-size: 0.92rem;
-  line-height: 1.45;
 }
 
 .table-wrapper {
