@@ -6,7 +6,8 @@ import opticalDiscModel from "../assets/models/cd_disc.glb?url";
 import flashMemoryModel from "../assets/models/memorycard_and_memorycardadapter.glb?url";
 import usbModel from "../assets/models/usb.glb?url";
 import ssdModel from "../assets/models/ssd.glb?url";
-import magneticTapeImage from "../assets/MagTape.jpg?url";
+import magneticTapeModel from "../assets/models/magtape.glb?url";
+import cloudStorageModel from "../assets/models/cloud.glb?url";
 
 const devices = [
   {
@@ -36,8 +37,8 @@ const devices = [
     funFact: "Tape is still used today for enterprise backups because it is cheap at very large capacities.",
     comparison: "Compared with punched media, tape stored far more data in less physical space.",
     ratings: { speed: 2, capacity: 3, portability: 2, durability: 3 },
-    image: magneticTapeImage,
-    credits: "7-inch reel of ¼-inch-wide audio recording tape, typical of consumer use in the 1950s–70s from Wikipedia",
+    model: magneticTapeModel,
+    credits: '"Stereophonic tape recorder "Electronics TA1-003"" (https://skfb.ly/6VYD8) by Osho is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).',
   },
   {
     id: "hard-disk-drive",
@@ -141,6 +142,7 @@ const devices = [
     funFact: "The cloud still depends on physical storage devices inside real data centers.",
     comparison: "Cloud storage changed the idea of storage from a device you carry to a service you access.",
     ratings: { speed: 4, capacity: 5, portability: 5, durability: 5 },
+    model: cloudStorageModel,
   },
 ];
 
