@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 p {
@@ -444,9 +445,15 @@ p {
   padding: 0.45rem 0.8rem;
   color: var(--storage-text);
   background: rgba(8, 17, 31, 0.7);
+  backdrop-filter: blur(4px);
   cursor: pointer;
   font-size: 0.8rem;
   font-weight: 700;
+  transition: background 0.15s ease;
+}
+
+.storage-model-preview__fullscreen:hover {
+  background: rgba(60, 75, 100, 0.7);
 }
 
 .storage-model-preview model-viewer,
