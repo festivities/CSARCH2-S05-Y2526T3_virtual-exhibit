@@ -268,6 +268,7 @@ function StorageModelPreview({ src, alt, image }) {
                 bounds="tight"
                 min-camera-orbit="auto auto 50%"
                 min-field-of-view="15deg"
+                class="storage-model-preview__viewer"
                 className="storage-model-preview__viewer"
               />
             ) : (
@@ -313,6 +314,7 @@ function StorageModelPreview({ src, alt, image }) {
               bounds="tight"
               min-camera-orbit="auto auto 50%"
               min-field-of-view="15deg"
+              class="storage-model-preview__viewer storage-model-preview__viewer--overlay"
               className="storage-model-preview__viewer storage-model-preview__viewer--overlay"
             />
           </div>

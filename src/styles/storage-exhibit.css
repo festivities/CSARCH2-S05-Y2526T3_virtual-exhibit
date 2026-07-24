@@ -4,18 +4,20 @@ html:has(.article) {
   color-scheme: dark;
   background-color: #060d19;
   background-image: 
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(54, 216, 255, 0.18), transparent 70%),
-    radial-gradient(circle at 90% 80%, rgba(157, 248, 113, 0.06), transparent 50%),
+    radial-gradient(ellipse 100% 60% at 50% 0%, rgba(54, 216, 255, 0.22), transparent 70%),
+    radial-gradient(circle at 90% 80%, rgba(157, 248, 113, 0.08), transparent 50%),
     linear-gradient(rgba(54, 216, 255, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(54, 216, 255, 0.04) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+  background-position: 0 0, 0 0, 0 0, 0 0;
   background-attachment: fixed;
 }
 
 body:has(.header),
 body:has(.article) {
-  background: transparent;
+  background-color: transparent;
   color: var(--storage-text);
+  min-height: 100vh;
 }
 
 p {
@@ -304,6 +306,7 @@ body:has(.article) footer {
 
 .storage-timeline {
   margin-top: 1rem;
+  margin-bottom: 2.5rem;
 }
 
 .storage-timeline__track {
@@ -482,13 +485,27 @@ body:has(.article) footer {
 .storage-detail-card__body-layout {
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
+  align-items: start;
   gap: 1.5rem;
   margin-top: 1rem;
 }
 
+.storage-detail-card__details-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.storage-detail-card__meta-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
 .storage-detail-grid {
   display: grid;
-  height: 100%;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.85rem;
 }
@@ -512,11 +529,15 @@ body:has(.article) footer {
 }
 
 .storage-model-panel {
+  display: flex;
+  flex-direction: column;
   margin-top: 1rem;
   padding: 0.95rem;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(54, 216, 255, 0.18);
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .storage-model-panel h4 {
@@ -530,14 +551,14 @@ body:has(.article) footer {
   color: var(--storage-muted);
   font-size: 0.68rem;
   line-height: 1.35;
+  word-break: break-word;
 }
 
 .storage-model-preview {
   position: relative;
   display: block;
   width: 100%;
-  height: 100%;
-  min-height: 380px;
+  height: 380px;
   border-radius: 8px;
   overflow: hidden;
   background: linear-gradient(
@@ -574,7 +595,6 @@ body:has(.article) footer {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 380px;
   background: transparent;
 }
 
@@ -707,10 +727,7 @@ body:has(.article) footer {
 .storage-timeline__controls {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 0.75rem;
-  margin-top: 1.25rem;
-  margin-bottom: 0.5rem;
 }
 
 .storage-timeline__controls button {
