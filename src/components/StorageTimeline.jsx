@@ -355,27 +355,6 @@ export default function StorageTimeline() {
             <p className="storage-eyebrow">Interactive Timeline</p>
             <h2>Storage Through Time</h2>
           </div>
-          <div className="storage-timeline__controls">
-            <button
-              type="button"
-              onClick={goPrevious}
-              disabled={selectedIndex === 0}
-              aria-label="Previous milestone"
-            >
-              ← Prev
-            </button>
-            <span className="storage-timeline__step">
-              {selectedIndex + 1} of {devices.length}
-            </span>
-            <button
-              type="button"
-              onClick={goNext}
-              disabled={selectedIndex === devices.length - 1}
-              aria-label="Next milestone"
-            >
-              Next →
-            </button>
-          </div>
         </div>
         <p>
           Click a milestone to see how each generation stored data, what it
@@ -409,12 +388,36 @@ export default function StorageTimeline() {
       <div className="storage-detail-card">
         <div className="storage-detail-card__content">
           <div className="storage-detail-card__header">
-            <div className="storage-detail-card__icon" aria-hidden="true">
-              {selectedDevice.icon}
+            <div className="storage-detail-card__title-group">
+              <div className="storage-detail-card__icon" aria-hidden="true">
+                {selectedDevice.icon}
+              </div>
+              <div className="storage-detail-card__title-area">
+                <p className="storage-eyebrow">{selectedDevice.era}</p>
+                <h3>{selectedDevice.name}</h3>
+              </div>
             </div>
-            <div className="storage-detail-card__title-area">
-              <p className="storage-eyebrow">{selectedDevice.era}</p>
-              <h3>{selectedDevice.name}</h3>
+
+            <div className="storage-timeline__controls">
+              <button
+                type="button"
+                onClick={goPrevious}
+                disabled={selectedIndex === 0}
+                aria-label="Previous milestone"
+              >
+                ← Prev
+              </button>
+              <span className="storage-timeline__step">
+                {selectedIndex + 1} of {devices.length}
+              </span>
+              <button
+                type="button"
+                onClick={goNext}
+                disabled={selectedIndex === devices.length - 1}
+                aria-label="Next milestone"
+              >
+                Next →
+              </button>
             </div>
           </div>
 
