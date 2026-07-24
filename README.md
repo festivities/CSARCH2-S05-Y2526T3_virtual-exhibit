@@ -18,7 +18,7 @@ On this branch, we extended the timeline with interactive 3D models for each sto
 
 One important realization was that storage devices are not only about capacity. Each generation improved different parts of computer architecture, such as access speed, portability, durability, reliability, and cost. For example, magnetic tape had good capacity for backups but was limited by sequential access. Hard disk drives improved random access, while SSDs removed moving parts and improved speed and durability.
 
-Another moment was that cloud storage is not purely "invisible" storage. Even if users access it online, it still depends on physical storage devices inside data centers. This helped us connect modern storage back to the same architectural ideas found in older devices.
+Another moment was that cloud storage is not purely “invisible” storage. Even if users access it online, it still depends on physical storage devices inside data centers. This helped us connect modern storage back to the same architectural ideas found in older devices.
 
 ## Things Learned
 
@@ -38,7 +38,8 @@ We also had to make sure the project could still run correctly using Node.js and
 
 The visual direction of the website follows a retro museum and futuristic technology theme. The dark background, cyan accents, green labels, and card-based layout were used to make the exhibit feel like a digital museum display. The timeline format was chosen because it clearly shows the historical development of storage devices from older physical media to modern network-based storage.
 
-The exhibit also includes "Then vs. Now," fun facts, comparison ratings, and a summary table to make the information easier to explore instead of presenting everything as plain text.
+The exhibit also includes “Then vs. Now,” fun facts, comparison ratings, and a summary table to make the information easier to explore instead of presenting everything as plain text.
+
 
 **Bytes of the Past: The Evolution of Storage Devices**  
 CSARCH2 Virtual Exhibit Case Proposal  

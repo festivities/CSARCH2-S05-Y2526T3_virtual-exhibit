@@ -228,7 +228,6 @@ body:has(.article) footer {
 .exhibit-hero p {
   position: relative;
   z-index: 1;
-  max-width: 760px;
   font-size: 1.15rem;
 }
 
@@ -307,16 +306,11 @@ body:has(.article) footer {
   margin-top: 1rem;
 }
 
-.storage-timeline__intro {
-  max-width: 780px;
-}
-
 .storage-timeline__track {
   margin: 2rem 0;
   overflow-x: scroll;
   scrollbar-gutter: stable;
 
-  /* Custom scrollbar for Firefox */
   scrollbar-width: thin;
   scrollbar-color: rgba(54, 216, 255, 0.4) rgba(255, 255, 255, 0.05);
 }
@@ -494,6 +488,7 @@ body:has(.article) footer {
 
 .storage-detail-grid {
   display: grid;
+  height: 100%;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.85rem;
 }
