@@ -195,6 +195,8 @@ const devices = [
       "Cloud storage changed the idea of storage from a device you carry to a service you access.",
     ratings: { speed: 4, capacity: 5, portability: 5, durability: 5 },
     model: cloudStorageModel,
+    credits:
+      '"Data center rack" (https://skfb.ly/otNIK) by David & 3D is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).',
   },
 ];
 

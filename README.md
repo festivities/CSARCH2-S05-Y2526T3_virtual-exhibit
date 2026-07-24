@@ -1,3 +1,17 @@
+<div align="center">
+
+# Bytes of the Past: The Evolution of Storage Devices
+
+**CSARCH2 Virtual Exhibit Case Proposal**
+
+Abdulrahman, Bilanes, Nicolas, Serra, Valle
+
+**S05 - Group 8**
+
+</div>
+
+---
+
 # Development Documentation
 
 ## Final Website Update
@@ -227,3 +241,14 @@ The exhibit may use:
    1. Simple comparison of storage devices based on speed, capacity, portability, and durability.
 6. **Conclusion Section**
    1. Summary explaining how storage history shows the continuous goal of computer architecture: making systems smaller, faster, more reliable, and more capable.
+
+## References
+
+- Computer History Museum. (n.d.). *Memory & storage: Timeline of computer history*. https://www.computerhistory.org/timeline/memory-storage/
+- Computer memory: Auxiliary memory. (n.d.). In *Encyclopædia Britannica*. Retrieved July 3, 2026, from https://www.britannica.com/technology/computer-memory/Auxiliary-memory
+- IBM. (n.d.). *IBM 350 disk storage unit (RAMAC)*. https://www.ibm.com/history/ramac
+- Microsoft. (n.d.). *Describe cloud concepts*. Microsoft Learn. Retrieved July 3, 2026, from https://learn.microsoft.com/en-us/training/paths/microsoft-azure-fundamentals-describe-cloud-concepts/
+- Sketchfab. (n.d.). *3D models of storage devices* \[3D models\]. Individual model attributions appear under each 3D preview in the interactive timeline. https://sketchfab.com
+
+## Disclosure on AI
+As per the syllabus, AI usage is completely banned in case project 2. AI/LLM tools were not utilized in the development of this exhibit.
